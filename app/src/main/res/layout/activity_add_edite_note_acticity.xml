@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEditeNoteActivity"
+    android:background="#28282B"
+    >
+
+    <EditText
+        android:id="@+id/EditeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_weight="1"
+        android:hint="Enter Note Title"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+
+        />
+
+    <EditText
+        android:id="@+id/editeNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditeTitle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+
+        android:layout_margin="10dp"
+
+        android:hint="Enter Note Descreption..."
+        android:textColorHint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_baseline_smart_button_24"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_margin="70dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+
+
+        />
+</RelativeLayout>

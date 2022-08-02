@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    app:cardElevation="4dp"
+app:cardBackgroundColor="#28282B "    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Text_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toStartOf="@+id/Delete_image"
+            android:text="Note Title"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Text_Note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Text_Title"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:padding="5dp"
+            android:paddingBottom="20dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toStartOf="@+id/Delete_image"
+            android:text="Note"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+
+        <ImageView
+            android:id="@+id/Delete_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
