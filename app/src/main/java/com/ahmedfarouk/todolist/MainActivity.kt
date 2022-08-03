@@ -20,13 +20,15 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        //declare elements
         btn = findViewById(R.id.floatingActionButton2)
         rv = findViewById(R.id.recycler)
+         //set recyclerView
         rv.layoutManager = LinearLayoutManager(this)
+         //setAdapter and link with recyclerView
         val notervAdapter = noteRVAdapter(this , this , this)
         rv.adapter = notervAdapter
-
+       // use viewModel Provider and observer to update all changes
         viewModel = ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(NoteViewModel1 ::class.java)
         viewModel.allNotes.observe(this , Observer { List->
             List?.let {
@@ -34,20 +36,20 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInt
             }
 
         })
-
+         //ADD NEW NOTE
         btn.setOnClickListener{
             val intent = Intent (this , AddEditeNoteActivity::class.java)
             startActivity(intent)
         }
 
 
-    }
+    }//DELETE NOTE
     override  fun OnDeleteIconClick(note: Note) {
         viewModel.deleteNote(note)
         Toast.makeText(this ,"${note.noteTitle} Deleted",Toast.LENGTH_LONG ).show()
 
 
-    }
+    }//EDIT NOTE
     override fun OnNoteClick(get: Note) {
         val intent = Intent(this ,AddEditeNoteActivity::class.java)
         intent.putExtra("noteType" , "Edit")
